@@ -9,21 +9,39 @@ import UIKit
 
 class WishListViewController: UIViewController {
 
+    @IBOutlet weak var wishTableView: UITableView!
+    var wishIndexList: [Int] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setWishIndexList()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setWishIndexList() {
+        wishIndexList = Product.dummyProductList.indices.filter({
+            Product.dummyProductList[$0].wish
+        })
     }
-    */
+}
 
+extension WishListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return wishIndexList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WishCell", for: indexPath) as! ProductTableViewCell
+        
+        cell.heart.tag = wishIndexList[indexPath.row]
+        cell.product = Product.dummyProductList[cell.heart.tag]
+        
+        return cell
+    }
+}
+
+extension WishListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        Product.dummyRecentList.insert(wishIndexList[indexPath.row])
+        NotificationCenter.default.post(name: Notification.Name.Recent.Changed, object: nil)
+    }
 }

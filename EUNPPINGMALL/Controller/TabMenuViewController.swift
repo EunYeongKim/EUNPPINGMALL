@@ -8,7 +8,7 @@
 import UIKit
 
 class TabMenuViewController: UIViewController {
-    let menu = ["PURCHASES", "RECENT", "WISHLIST"]
+    let menu = ["PRODUCT", "RECENT", "WISHLIST"]
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var menuUnderBar: UIView!
@@ -67,7 +67,6 @@ extension TabMenuViewController: UICollectionViewDelegate {
         moveMenuUnderBar(indexPath: indexPath)
         pageVCDelegate?.scrollPage(pageIndex: indexPath.row, previousIndex: previousIndex)
         previousIndex = indexPath.row
-        self.view.layoutIfNeeded()
     }
 }
 

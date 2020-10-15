@@ -10,7 +10,7 @@ import UIKit
 class TabMenuPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     var menuDelegate: PageIndexDelegate?
     
-    let identifiers = ["PurchasesVC", "RecentVC", "WishListVC"]
+    let identifiers = ["ProductVC", "RecentVC", "WishListVC"]
     
     lazy var VCArray: [UIViewController] = {
         return identifiers.map({ (id: String) -> (UIViewController) in
@@ -79,10 +79,8 @@ class TabMenuPageViewController: UIPageViewController, UIPageViewControllerDataS
 
 extension TabMenuPageViewController: PageViewControllerDelegate {
     func scrollPage(pageIndex: Int, previousIndex: Int) {
-        var direction: UIPageViewController.NavigationDirection = .forward
-        if previousIndex > pageIndex {
-            direction = .reverse
-        }
+        let direction: UIPageViewController.NavigationDirection = (previousIndex > pageIndex) ? .reverse : .forward
+        
         self.setViewControllers([VCArray[pageIndex]], direction: direction, animated: true, completion: nil)
     }
 }
