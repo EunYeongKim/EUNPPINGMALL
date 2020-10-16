@@ -10,7 +10,7 @@ import UIKit
 class TabMenuPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     var menuDelegate: PageIndexDelegate?
     
-    let identifiers = ["PurchasesVC", "RecentVC", "WishListVC"]
+    let identifiers = ["ProductVC", "RecentVC", "WishListVC"]
     
     lazy var VCArray: [UIViewController] = {
         return identifiers.map({ (id: String) -> (UIViewController) in

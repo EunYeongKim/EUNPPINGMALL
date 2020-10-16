@@ -8,22 +8,47 @@
 import UIKit
 
 class RecentViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    @IBOutlet weak var recentTableView: UITableView!
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: Notification.Name.Recent.Changed, object: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureUI()
+        setNotificationObserver()
     }
-    */
+    
+    func configureUI() {
+        if Product.dummyRecentList.count == 0 {
+            recentTableView.isHidden = true
+        }
+    }
+    
+    func setNotificationObserver() {
+        NotificationCenter.default.addObserver(forName: Notification.Name.Recent.Changed, object: nil, queue: OperationQueue.main) { [weak self] (noti) in
+            self?.recentTableView.reloadData()
+        }
+    }
+}
 
+extension RecentViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Product.dummyRecentList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RecentCell", for: indexPath) as! ProductTableViewCell
+        
+        cell.heart.tag = Product.dummyRecentList[Product.dummyRecentList.index(Product.dummyRecentList.startIndex, offsetBy: indexPath.row)]
+        cell.product = Product.dummyProductList[cell.heart.tag]
+        
+        return cell
+    }
+}
+
+extension RecentViewController: UITableViewDelegate {
+    
 }
