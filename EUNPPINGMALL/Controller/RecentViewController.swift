@@ -15,6 +15,14 @@ class RecentViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: Notification.Name.Recent.Changed, object: nil)
     }
     
+    func showProductPopUp(index: Int) {
+        guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PopUpViewController") as? PopUpViewController else { return }
+        
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.product = Product.dummyProductList[index]
+        present(vc, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -50,5 +58,8 @@ extension RecentViewController: UITableViewDataSource {
 }
 
 extension RecentViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        Product.dummyRecentList.insert(indexPath.row)
+        showProductPopUp(index: indexPath.row)
+    }
 }

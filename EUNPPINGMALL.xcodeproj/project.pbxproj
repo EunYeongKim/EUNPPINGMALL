@@ -23,6 +23,7 @@
 		28763F6525380E770057F84B /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28763F6425380E770057F84B /* ProductTableViewCell.swift */; };
 		28763F6A253812B70057F84B /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28763F69253812B70057F84B /* IntExtension.swift */; };
 		28763F6E253823FD0057F84B /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28763F6D253823FD0057F84B /* NotificationExtension.swift */; };
+		28763F78253984900057F84B /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28763F77253984900057F84B /* PopUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		28763F6425380E770057F84B /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		28763F69253812B70057F84B /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		28763F6D253823FD0057F84B /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
+		28763F77253984900057F84B /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				2843AB42253590CB00825B04 /* ProductViewController.swift */,
 				2843AB46253590D200825B04 /* RecentViewController.swift */,
 				2843AB49253590D800825B04 /* WishListViewController.swift */,
+				28763F77253984900057F84B /* PopUpViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				28763F6A253812B70057F84B /* IntExtension.swift in Sources */,
 				2843AB43253590CB00825B04 /* ProductViewController.swift in Sources */,
 				2843AB4A253590D800825B04 /* WishListViewController.swift in Sources */,
+				28763F78253984900057F84B /* PopUpViewController.swift in Sources */,
 				28763F6525380E770057F84B /* ProductTableViewCell.swift in Sources */,
 				282182EE2537D785000BFE0D /* Product.swift in Sources */,
 				2843AB352535732600825B04 /* TabMenuCollectionViewCell.swift in Sources */,
