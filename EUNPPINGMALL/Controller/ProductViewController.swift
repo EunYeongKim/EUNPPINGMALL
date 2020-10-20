@@ -8,7 +8,7 @@
 import UIKit
 
 class ProductViewController: UIViewController {
-
+    
     @IBOutlet weak var productTableView: UITableView!
     
     override func viewDidLoad() {
@@ -35,5 +35,6 @@ extension ProductViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         Product.dummyRecentList.insert(indexPath.row)
         NotificationCenter.default.post(name: Notification.Name.Recent.Changed, object: nil)
+        PopUpUtility.showProductPopUp(viewController: self, product: Product.dummyProductList[indexPath.row])
     }
 }

@@ -12,19 +12,10 @@ class ProductTableViewCell: UITableViewCell {
     var product: Product? {
         didSet {
             guard let p = product else { return }
-            if let imageStr = p.img {
-                self.img.image = UIImage(named: imageStr)
-            } else {
-                self.img.image = UIImage(named: "default")
-            }
+            self.img.image = UIImage(named: p.img ?? "default")
             self.name.text = p.name
             self.price.text = p.price.commaRepresentation + "원"
-            
-            if p.wish {
-                self.heart.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-            } else {
-                self.heart.setImage(UIImage(systemName: "heart"), for: .normal)
-            }
+            self.heart.setImage(UIImage(systemName: p.wish ? "heart.fill" : "heart"), for: .normal)
         }
     }
     
@@ -33,7 +24,8 @@ class ProductTableViewCell: UITableViewCell {
     @IBOutlet weak var heart: UIButton!
     @IBOutlet weak var price: UILabel!
     @IBAction func didTapHeart(_ sender: Any) {
-        if Product.dummyProductList[heart.tag].wish {
+        guard let p = product else { return }
+        if p.wish {
             Product.dummyProductList[heart.tag].wish = false
             self.heart.setImage(UIImage(systemName: "heart"), for: .normal)
         } else {

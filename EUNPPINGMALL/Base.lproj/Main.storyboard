@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -29,7 +30,7 @@
         <!--은핑몰-->
         <scene sceneID="DJN-Y8-Sof">
             <objects>
-                <viewController storyboardIdentifier="TabMenuViewController" id="JvY-3D-wqb" customClass="TabMenuViewController" customModule="EUNPPINGMALL" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TabMenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JvY-3D-wqb" customClass="TabMenuViewController" customModule="EUNPPINGMALL" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kh6-Ha-Chf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,7 +87,6 @@
                                 <rect key="frame" x="0.0" y="133" width="128" height="5"/>
                                 <color key="backgroundColor" red="0.65490196078431373" green="0.61176470588235299" blue="0.55686274509803924" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="128" id="ZbM-Np-A2k"/>
                                     <constraint firstAttribute="height" constant="5" id="hwc-Y9-Afb"/>
                                 </constraints>
                             </view>
@@ -117,7 +117,7 @@
         <!--Tab Menu Page View Controller-->
         <scene sceneID="L83-pY-3qQ">
             <objects>
-                <viewController storyboardIdentifier="TabMenuPageViewController" id="fuI-5b-Sdl" customClass="TabMenuPageViewController" customModule="EUNPPINGMALL" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TabMenuPageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fuI-5b-Sdl" customClass="TabMenuPageViewController" customModule="EUNPPINGMALL" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OrW-lF-a51">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -132,7 +132,7 @@
         <!--Product View Controller-->
         <scene sceneID="aYw-z3-xIe">
             <objects>
-                <viewController storyboardIdentifier="ProductVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EtZ-Wg-RJk" customClass="ProductViewController" customModule="EUNPPINGMALL" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EtZ-Wg-RJk" customClass="ProductViewController" customModule="EUNPPINGMALL" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zXB-9X-Ge0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -227,7 +227,7 @@
         <!--Recent View Controller-->
         <scene sceneID="BMN-0d-Peg">
             <objects>
-                <viewController storyboardIdentifier="RecentVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eXl-zX-bd5" customClass="RecentViewController" customModule="EUNPPINGMALL" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eXl-zX-bd5" customClass="RecentViewController" customModule="EUNPPINGMALL" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H1p-oD-N5x">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -239,7 +239,7 @@
                                 <color key="textColor" red="0.65490196079999996" green="0.61176470589999998" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ln2-l3-Dye">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ln2-l3-Dye">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -324,10 +324,121 @@
             </objects>
             <point key="canvasLocation" x="1103" y="818"/>
         </scene>
+        <!--Pop Up View Controller-->
+        <scene sceneID="znG-Hi-GV3">
+            <objects>
+                <viewController storyboardIdentifier="PopUpViewController" id="NpH-sn-5XH" customClass="PopUpViewController" customModule="EUNPPINGMALL" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Sz-W1-Nju">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zqD-Zn-dcb">
+                                <rect key="frame" x="58" y="273" width="298" height="350"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="kVb-Md-2L0">
+                                        <rect key="frame" x="49" y="234" width="200" height="70"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRT-7j-hEn">
+                                                <rect key="frame" x="0.0" y="0.0" width="49" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="109" translatesAutoresizingMaskIntoConstraints="NO" id="ltb-TA-Z7k">
+                                                <rect key="frame" x="0.0" y="26" width="200" height="21.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pc-wn-asx">
+                                                        <rect key="frame" x="0.0" y="0.0" width="71" height="21.5"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                        <color key="textColor" red="0.61930910859999999" green="0.59051068539999996" blue="0.55363408660000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="824-34-SDP">
+                                                        <rect key="frame" x="180" y="0.0" width="20" height="21.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="2Nj-PH-Kli"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <color key="tintColor" red="0.92156862750000001" green="0.62352941179999999" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <state key="normal" image="heart" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="didTapHeart:" destination="NpH-sn-5XH" eventType="touchUpInside" id="1ol-js-KiR"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kG8-7w-wyn">
+                                                <rect key="frame" x="0.0" y="49.5" width="41.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ltb-TA-Z7k" secondAttribute="trailing" id="doq-1U-dbJ"/>
+                                            <constraint firstItem="ltb-TA-Z7k" firstAttribute="leading" secondItem="kVb-Md-2L0" secondAttribute="leading" id="rpL-UI-RcM"/>
+                                        </constraints>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o1P-D2-CDl">
+                                        <rect key="frame" x="49" y="25" width="200" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="KsU-NQ-6FR"/>
+                                            <constraint firstAttribute="width" constant="200" id="fER-hX-Hao"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.97254901959999995" green="0.92549019610000005" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="o1P-D2-CDl" firstAttribute="top" secondItem="zqD-Zn-dcb" secondAttribute="top" constant="25" id="8Hs-39-vcD"/>
+                                    <constraint firstItem="kVb-Md-2L0" firstAttribute="leading" secondItem="o1P-D2-CDl" secondAttribute="leading" id="GzO-nf-zFF"/>
+                                    <constraint firstItem="o1P-D2-CDl" firstAttribute="leading" secondItem="zqD-Zn-dcb" secondAttribute="leading" constant="49" id="aTB-gC-DeC"/>
+                                    <constraint firstItem="kVb-Md-2L0" firstAttribute="centerX" secondItem="zqD-Zn-dcb" secondAttribute="centerX" id="d7d-og-0Ue"/>
+                                    <constraint firstItem="o1P-D2-CDl" firstAttribute="centerX" secondItem="zqD-Zn-dcb" secondAttribute="centerX" id="efU-zx-Jn3"/>
+                                    <constraint firstItem="kVb-Md-2L0" firstAttribute="firstBaseline" secondItem="o1P-D2-CDl" secondAttribute="baseline" constant="28" symbolType="layoutAnchor" id="pVh-Xo-1yV"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8G-HO-LsV">
+                                <rect key="frame" x="331" y="241" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="G9z-gC-YtJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="multiply.circle" catalog="system" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapDismiss:" destination="NpH-sn-5XH" eventType="touchUpInside" id="Vck-W7-Lec"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HLX-YI-TDm"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.45000000000000001" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="zqD-Zn-dcb" firstAttribute="centerX" secondItem="8Sz-W1-Nju" secondAttribute="centerX" id="5Ag-5G-fRz"/>
+                            <constraint firstItem="zqD-Zn-dcb" firstAttribute="top" secondItem="HLX-YI-TDm" secondAttribute="top" constant="229" id="7Rb-Gn-6c7"/>
+                            <constraint firstItem="A8G-HO-LsV" firstAttribute="top" secondItem="HLX-YI-TDm" secondAttribute="top" constant="197" id="EVY-M9-HdW"/>
+                            <constraint firstItem="zqD-Zn-dcb" firstAttribute="trailing" secondItem="A8G-HO-LsV" secondAttribute="trailing" id="U2d-hm-3z0"/>
+                            <constraint firstItem="zqD-Zn-dcb" firstAttribute="centerY" secondItem="8Sz-W1-Nju" secondAttribute="centerY" id="VAb-e4-wts"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="desc" destination="kG8-7w-wyn" id="uG3-us-qye"/>
+                        <outlet property="heart" destination="824-34-SDP" id="Dvb-YV-NXg"/>
+                        <outlet property="img" destination="o1P-D2-CDl" id="L1u-6a-Qru"/>
+                        <outlet property="name" destination="IRT-7j-hEn" id="3Te-ro-wHY"/>
+                        <outlet property="popUpView" destination="zqD-Zn-dcb" id="k7v-7r-7xO"/>
+                        <outlet property="price" destination="1pc-wn-asx" id="i4m-FD-p3g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jSd-jZ-hmU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1105.7971014492755" y="1529.4642857142856"/>
+        </scene>
         <!--Wish List View Controller-->
         <scene sceneID="W4s-yK-vik">
             <objects>
-                <viewController storyboardIdentifier="WishListVC" id="8tf-nf-7PP" customClass="WishListViewController" customModule="EUNPPINGMALL" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WishListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8tf-nf-7PP" customClass="WishListViewController" customModule="EUNPPINGMALL" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sts-XX-ecr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -427,6 +538,7 @@
     </scenes>
     <resources>
         <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="multiply.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

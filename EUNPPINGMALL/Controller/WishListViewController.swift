@@ -11,7 +11,7 @@ class WishListViewController: UIViewController {
 
     @IBOutlet weak var wishTableView: UITableView!
     var wishIndexList: [Int] = []
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setWishIndexList()
@@ -43,5 +43,6 @@ extension WishListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         Product.dummyRecentList.insert(wishIndexList[indexPath.row])
         NotificationCenter.default.post(name: Notification.Name.Recent.Changed, object: nil)
+        PopUpUtility.showProductPopUp(viewController: self, product: Product.dummyProductList[wishIndexList[indexPath.row]])
     }
 }

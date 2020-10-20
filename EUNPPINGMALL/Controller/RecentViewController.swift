@@ -50,5 +50,8 @@ extension RecentViewController: UITableViewDataSource {
 }
 
 extension RecentViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let index = Product.dummyRecentList[Product.dummyRecentList.index(Product.dummyRecentList.startIndex, offsetBy: indexPath.row)]
+        PopUpUtility.showProductPopUp(viewController: self, product: Product.dummyProductList[index])
+    }
 }
