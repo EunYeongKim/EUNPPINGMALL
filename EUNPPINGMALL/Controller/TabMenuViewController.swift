@@ -22,6 +22,15 @@ class TabMenuViewController: UIViewController {
         
         setDelegate()
         setFirstIndexIsSelected()
+        setMenuUnderBarConstraints()
+    }
+    
+    func setMenuUnderBarConstraints() {
+        let underBarWidth = view.frame.width / CGFloat(menu.count)
+        
+        NSLayoutConstraint.deactivate(menuUnderBar.constraints)
+        let underBarConstraints = [menuUnderBar.widthAnchor.constraint(equalToConstant: underBarWidth), menuUnderBar.heightAnchor.constraint(equalToConstant: 5), menuUnderBar.bottomAnchor.constraint(equalTo: collectionView.bottomAnchor)]
+        NSLayoutConstraint.activate(underBarConstraints)
     }
 
     func setFirstIndexIsSelected() {
@@ -73,7 +82,6 @@ extension TabMenuViewController: UICollectionViewDelegate {
 extension TabMenuViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = view.frame.width / CGFloat(menu.count)
-        menuUnderBar.frame.size.width = width
         return CGSize(width: width, height: 50)
     }
 }

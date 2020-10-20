@@ -10,11 +10,11 @@ import UIKit
 class TabMenuPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     var menuDelegate: PageIndexDelegate?
     
-    let identifiers = ["ProductVC", "RecentVC", "WishListVC"]
+    let identifiers = [ProductViewController.reuseIdentifier, RecentViewController.reuseIdentifier, WishListViewController.reuseIdentifier]
     
     lazy var VCArray: [UIViewController] = {
         return identifiers.map({ (id: String) -> (UIViewController) in
-            return VCInstance(name: id)
+            return ViewControlllerUtility.getVCInstance(storyboardName: "Main", vcID: id)
         })
     }()
     
@@ -32,10 +32,6 @@ class TabMenuPageViewController: UIPageViewController, UIPageViewControllerDataS
     func setDelegate(_ viewController: UIViewController) {
         guard let vc = viewController as? TabMenuViewController else { return }
         vc.pageVCDelegate = self
-    }
-    
-    private func VCInstance(name: String) -> UIViewController {
-        return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: name)
     }
     
     required init?(coder: NSCoder) {

@@ -16,7 +16,8 @@ class PopUpViewController: UIViewController {
     @IBOutlet weak var desc: UILabel!
     @IBOutlet weak var heart: UIButton!
     @IBAction func didTapHeart(_ sender: Any) {
-        if Product.dummyProductList[heart.tag].wish {
+        guard let p = product else { return }
+        if p.wish {
             Product.dummyProductList[heart.tag].wish = false
             self.heart.setImage(UIImage(systemName: "heart"), for: .normal)
         } else {
@@ -45,16 +46,8 @@ class PopUpViewController: UIViewController {
         self.price.text = p.price.commaRepresentation
         self.desc.text = p.description
 
-        if let img = p.img {
-            self.img.image = UIImage(named: img)
-        } else {
-            self.img.image = UIImage(named: "default")
-        }
-
-        if p.wish {
-            self.heart.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-        } else {
-            self.heart.setImage(UIImage(systemName: "heart"), for: .normal)
-        }
+        self.img.image = UIImage(named: p.img ?? "default")
+        
+        self.heart.setImage(UIImage(systemName: p.wish ? "heart.fill" : "heart"), for: .normal)
     }
 }

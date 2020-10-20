@@ -30,7 +30,7 @@
         <!--은핑몰-->
         <scene sceneID="DJN-Y8-Sof">
             <objects>
-                <viewController storyboardIdentifier="TabMenuViewController" id="JvY-3D-wqb" customClass="TabMenuViewController" customModule="EUNPPINGMALL" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TabMenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JvY-3D-wqb" customClass="TabMenuViewController" customModule="EUNPPINGMALL" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kh6-Ha-Chf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,7 +87,6 @@
                                 <rect key="frame" x="0.0" y="133" width="128" height="5"/>
                                 <color key="backgroundColor" red="0.65490196078431373" green="0.61176470588235299" blue="0.55686274509803924" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="128" id="ZbM-Np-A2k"/>
                                     <constraint firstAttribute="height" constant="5" id="hwc-Y9-Afb"/>
                                 </constraints>
                             </view>
@@ -118,7 +117,7 @@
         <!--Tab Menu Page View Controller-->
         <scene sceneID="L83-pY-3qQ">
             <objects>
-                <viewController storyboardIdentifier="TabMenuPageViewController" id="fuI-5b-Sdl" customClass="TabMenuPageViewController" customModule="EUNPPINGMALL" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TabMenuPageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fuI-5b-Sdl" customClass="TabMenuPageViewController" customModule="EUNPPINGMALL" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OrW-lF-a51">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,7 +132,7 @@
         <!--Product View Controller-->
         <scene sceneID="aYw-z3-xIe">
             <objects>
-                <viewController storyboardIdentifier="ProductVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EtZ-Wg-RJk" customClass="ProductViewController" customModule="EUNPPINGMALL" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EtZ-Wg-RJk" customClass="ProductViewController" customModule="EUNPPINGMALL" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zXB-9X-Ge0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -228,7 +227,7 @@
         <!--Recent View Controller-->
         <scene sceneID="BMN-0d-Peg">
             <objects>
-                <viewController storyboardIdentifier="RecentVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eXl-zX-bd5" customClass="RecentViewController" customModule="EUNPPINGMALL" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eXl-zX-bd5" customClass="RecentViewController" customModule="EUNPPINGMALL" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H1p-oD-N5x">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -240,7 +239,7 @@
                                 <color key="textColor" red="0.65490196079999996" green="0.61176470589999998" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ln2-l3-Dye">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ln2-l3-Dye">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -439,7 +438,7 @@
         <!--Wish List View Controller-->
         <scene sceneID="W4s-yK-vik">
             <objects>
-                <viewController storyboardIdentifier="WishListVC" id="8tf-nf-7PP" customClass="WishListViewController" customModule="EUNPPINGMALL" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WishListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8tf-nf-7PP" customClass="WishListViewController" customModule="EUNPPINGMALL" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sts-XX-ecr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
